@@ -63,8 +63,14 @@ public class AppController {
         return "redirect:/login";
     }
     @GetMapping("background")
-    private String backgroundPage(){
+    private String backgroundPage(Model model){
+
         return "/background";
+    }
+    @GetMapping("backgroundDarksouls")
+    private String backgroundDarksouls(Model model){
+        model.addAttribute("background",backgroundService.getAllBackgrounds());
+        return "/darksouls";
     }
 
 
